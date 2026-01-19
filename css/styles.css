@@ -181,9 +181,9 @@ p {
 
 .address-list {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 12px; /* або як у макеті */
 }
+.address-item { margin: 0; }
 
 .address-link {
   display: block;
@@ -224,15 +224,18 @@ p {
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url("../images/hero/hero-mob-2x.jpg");
   }
+
 }
 
 .hero-title {
-  max-width: 496px;
-  margin: 0 auto 48px;
-  font-size: 56px;
-  line-height: 1.07;
+  max-width: 216px;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+
   color: var(--white);
+  text-align: center;
+  margin: 0 auto 72px;
 }
 
 .hero-btn {
@@ -273,7 +276,7 @@ p {
 }
 
 .advantages-title {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -296,10 +299,9 @@ p {
   }
 
   .advantages-text {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    text-align: left;
   }
+
 }
 
 /* =====================
@@ -526,6 +528,7 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--white);
+  text-align: center;
   margin-bottom: 16px;
 }
 
@@ -727,6 +730,13 @@ p {
     0 2px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 288px;
+    padding: 72px 16px 24px;
+  }
 }
 
 .modal-close-icon {
@@ -1066,8 +1076,7 @@ p {
 .mob-address-list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* ✅ вліво */
-  gap: 24px;
+  gap: 24px; /* під макет */
 }
 
 .mob-tel,
@@ -1122,7 +1131,7 @@ p {
     max-width: 768px;
   }
 
-  /* header */
+   /* header */
   .header-logo {
     margin-right: 120px;
   }
@@ -1149,7 +1158,18 @@ p {
       url("../images/hero/hero-tab-1x.jpg");
   }
 
+  .hero-title {
+    font-size: 56px;
+    width: 496px;
+    max-width: 496px; /* можна залишити для безпеки */
+  }
+
   /* sections */
+
+  .advantages-title {
+    font-size: 36px;
+  }
+
   .advantages-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1228,6 +1248,13 @@ p {
 
 }
 
+/* ===== TEAM container — TABLET ONLY ===== */
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .team .container {
+    width: 554px;
+  }
+}
+
 /* retina hero tablet */
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
@@ -1262,6 +1289,9 @@ p {
       url("../images/hero/hero-desk-1x.jpg");
   }
 
+  .hero-title {
+    font-size: 56px;
+  }
   /* sections */
 
   .section {
@@ -1330,60 +1360,4 @@ p {
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url("../images/hero/hero-desk-2x.jpg");
   }
-}
-
-
-
-
-/* ===== FORCE MOBILE MENU LOOK (override) ===== */
-.mob-menu {
-  background-color: #ffffff;
-}
-
-.mob-menu .mob-nav-link {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  color: var(--navy-blue);
-}
-
-.mob-menu .mob-nav-link.current {
-  color: var(--ocean);
-}
-
-.mob-menu .mob-tel {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 1.11;
-  color: var(--iris);
-}
-
-.mob-menu .mob-mail {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  color: var(--slate);
-}
-
-/* social */
-
-.mob-menu .mob-social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--iris);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* робимо іконки БІЛИМИ (і fill, і stroke, і currentColor) */
-.mob-menu .mob-social-icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--cloud);
-  stroke: var(--cloud);
-  color: var(--cloud);
 }
